@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html >
+
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Fraud Detection</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  
+
+</head>
+
+
+
+<body>
+
+ <div class="login">
+
+	<h1>Fraud Detection</h1>
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="zip_code_3_digits" placeholder="Zip Code(3 digits)" required="required" />
+
+        <input type="text" name="Code_illness" placeholder="Code Illness" required="required" />
+
+		<input type="text" name="ratio_of_total_costs_to_total_charges" placeholder="Ratio of total Charges" required="required" />
+
+         <input type="text" name="Age" placeholder="Age" required="required" />
+         
+        <input type="text" name="Gender" placeholder="Gender" required="required" />
+                               
+          <input type="text" name="Cultural_group" placeholder="Cultural group" required="required" />
+               
+          <input type="text" name="ethnicity" placeholder="Ethnicity" required="required" />
+                 
+         <input type="text" name="Admission_Type" placeholder="Admission Type" required="required" />
+                   
+           <input type="text" name="Home_or_self_care" placeholder="Home or self_care" required="required" />
+                     
+            <input type="text" name="apr_mdc_description" placeholder="apr_mdc_description" required="required" />
+                       
+            <input type="text" name="Description_illness" placeholder="Description Illness" required="required" />
+                         
+         <input type="text" name="Mortality_Risk" placeholder="Mortality Risk" required="required" />
+                           
+            <input type="text" name="Surg_Description" placeholder="Surgical Description" required="required" />
+                            
+            <input type="text" name="Payment_typology_1" placeholder="Payment Typology" required="required" />
+         
+              <input type="text" name="Emergency_dept_yes_no" placeholder="Emergency Department" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+
+
+
+   <br>
+
+   <br>
+
+   {{ prediction_text }}
+
+
+
+ </div>
+
+
+
+
+
+</body>
+
+</html>
